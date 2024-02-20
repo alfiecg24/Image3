@@ -1,0 +1,19 @@
+{
+    "clangd.fallbackFlags": [
+		"-I${workspaceFolder}/include",
+		"-I${workspaceFolder}/external/libDER/include",
+	],
+    "files.associations": {
+        "*.ejs": "html",
+		"__hash_table": "c",
+		"__split_buffer": "c",
+		"array": "c",
+		"bitset": "c",
+		"initializer_list": "c",
+		"span": "c",
+		"string": "c",
+		"string_view": "c",
+		"unordered_map": "c",
+		"vector": "c"
+    }
+}
