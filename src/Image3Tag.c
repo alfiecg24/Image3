@@ -40,7 +40,7 @@ void image3_print_kbag_tag(struct Image3Tag *tag) {
 
 void image3_print_ecid_tag(struct Image3Tag *tag) {
     uint64_t ecid = *((uint64_t *)tag->buffer);
-    printf("ECID: 0x%llx\n", ecid);
+    printf("ECID: 0x%.16llx\n", ecid);
 }
 
 void image3_print_chip_tag(struct Image3Tag *tag) {
@@ -206,6 +206,10 @@ void image3_print_tags(struct Image3 *image) {
             image3_print_sdom_tag(tag);
         } else if (IMAGE_3_TAG_IS_TAG(tag, "PROD")) {
             image3_print_prod_tag(tag);
+        } else if (IMAGE_3_TAG_IS_TAG(tag, "SHSH")) {
+            printf("Image3 is signed and personalised!\n");
+        } else if (IMAGE_3_TAG_IS_TAG(tag, "CERT")) {
+
         } else {
             printf("Tag: %s\n", image3_type_to_string(tag->tag));
         }

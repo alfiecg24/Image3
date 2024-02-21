@@ -39,6 +39,8 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    printf("\n -- Main image -- \n");
+
     if (printHeaderInfo) {
         printf("Image header:\n");
         printf("\tMagic: %s\n", image3_type_to_string(image->header->magic));
@@ -58,6 +60,7 @@ int main(int argc, char *argv[]) {
     // Iterate over nested images
     if (image->nestedImageCount > 0) {
         for (int i = 0; i < image->nestedImageCount; i++) {
+            printf("\n -- Nested image %d -- \n", i+1);
             struct Image3 *nestedImage = image->nestedImages[i];
             if (printHeaderInfo) {
                 printf("Nested image header:\n");
